@@ -168,8 +168,7 @@ DM.R <- function(genome = c("hg38", "hg19", "mm10", "mm9", "rheMac10",
   if(is(TxDb, "TxDb")){
     annoTrack <- dmrseq::getAnnot(genome)
   }else if(is(TxDb, "EnsDb")){
-    annoTrack <- GenomicRanges::GRangesList(CpGs = DMRichR::getCpGs(genome),
-                                            Exons = DMRichR::getExons(TxDb),
+    annoTrack <- GenomicRanges::GRangesList(Exons = DMRichR::getExons(TxDb),
                                             compress = FALSE)
   }
   
